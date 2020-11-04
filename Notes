@@ -1,0 +1,36 @@
+Fluor 647-conjugated donkey antihuman IgM 
+Amax: 651 Emax: 667nm
+
+
+Cy3-conjugated goat anti-human IgG
+Cyanine Cy™3
+Amax: 550 Emax: 570nm
+
+
+Signal Intensity was defined as the median of the foreground subtracted by the median of background for each spot and then averaged the quadruplicate spots for each protein. IgG and IgM data were analyzed separately
+
+
+
+T Tao Lab, B Hangzhou Bioeast biotech. Co.,Ltd., K Healthcode Co., Ltd., 
+S Sanyou biopharmaceuticals Co.,Ltd.,
+W VACURE l Biotechnology Co.,Ltd.,
+Y Sino biological Co.,Ltd. Expression system: 
+
+(1) E. coli: All proteins from Tao Lab (T), N Protein _S, N Protein_W; 
+(2) Cell-free: All proteins from Healthcode Co., Ltd. (K), 
+(3) Mammalian: S1_B, S1_S, S-RBD_S, S-RBD_Y.
+
+
+Before processing, data from some spots, such as NSP7_0.1_T and NSP9_K, were excluded for probably printing contamination.
+
+
+Cluster analysis was performed by pheatmap package in R51
+
+P-values for statistical analysis were calculated by two-way t-test and q-values or adjusted p-values were obtained using BH (Benjamini and Hochberg) method
+
+
+Significant analysis of microarray (SAM) was performed by “samr” package of the R language with default parameters
+
+To calculate the positive rate of antibody response for each protein, mean signal + 3* standard deviation (SD) of the control sera were used to set the threshold. 
+The multiple linear regression was perfomed with the function “lm” from the “stats” package of the R language. 
+To make the cofficients in the regression model more comparable with each other, the values of all predictor vairables (x) have been normalized as follows: (x – min(x))/(max(x) – min(x)).
