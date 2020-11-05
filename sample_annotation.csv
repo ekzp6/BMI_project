@@ -1,0 +1,57 @@
+﻿Samples ID,Description,Array platform,File,Block
+534,COVID-19 pateint,#1-1,1,1
+535,COVID-19 pateint,#1-2,1,2
+410,COVID-19 pateint,#1-3,1,3
+510,COVID-19 pateint,#1-4,1,4
+607,COVID-19 pateint,#1-5,1,5
+406,COVID-19 pateint,#1-6,1,6
+407,COVID-19 pateint,#1-7,1,7
+NC95,Control,#1-8,1,8
+429,COVID-19 pateint,#1-9,1,9
+NC96,Control,#1-10,1,10
+NC67,Control,#1-11,1,11
+NC97,Control,#1-12,1,12
+LC168,Control,#1-13,1,13
+NC63,Control,#1-14,1,14
+534,COVID-19 pateint,#2-1,2,1
+535,COVID-19 pateint,#2-2,2,2
+605,COVID-19 pateint,#2-3,2,3
+414,COVID-19 pateint,#2-4,2,4
+532,COVID-19 pateint,#2-5,2,5
+401,COVID-19 pateint,#2-6,2,6
+530,COVID-19 pateint,#2-7,2,7
+NC98,Control,#2-8,2,8
+509,COVID-19 pateint,#2-9,2,9
+NC99,Control,#2-10,2,10
+502,COVID-19 pateint,#2-11,2,11
+NC100,Control,#2-12,2,12
+LC169,Control,#2-13,2,13
+NC64,Control,#2-14,2,14
+534,COVID-19 pateint,#3-1,3,1
+535,COVID-19 pateint,#3-2,3,2
+409,COVID-19 pateint,#3-3,3,3
+526,COVID-19 pateint,#3-4,3,4
+436,COVID-19 pateint,#3-5,3,5
+527,COVID-19 pateint,#3-6,3,6
+508,COVID-19 pateint,#3-7,3,7
+LC175,Control,#3-8,3,8
+520,COVID-19 pateint,#3-9,3,9
+LC177,Control,#3-10,3,10
+522,COVID-19 pateint,#3-11,3,11
+LC180,Control,#3-12,3,12
+LC171,Control,#3-13,3,13
+NC65,Control,#3-14,3,14
+Blank,blank,#4-1,4,1
+531,COVID-19 pateint,#4-2,4,2
+610,COVID-19 pateint,#4-3,4,3
+Blank,blank,#4-4,4,4
+744,COVID-19 pateint,#4-5,4,5
+533,COVID-19 pateint,#4-6,4,6
+405,COVID-19 pateint,#4-7,4,7
+LC181,Control,#4-8,4,8
+523,COVID-19 pateint,#4-9,4,9
+LC182,Control,#4-10,4,10
+529,COVID-19 pateint,#4-11,4,11
+LC184,Control,#4-12,4,12
+LC174,Control,#4-13,4,13
+NC66,Control,#4-14,4,14
