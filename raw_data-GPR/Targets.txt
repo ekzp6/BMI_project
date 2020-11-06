@@ -1,0 +1,57 @@
+Samples ID	Description	Array platform	File	Block	FileName
+"534"	"COVID-19 patient"	"#1-1"	1	1	1_20200305.gpr
+"535"	"COVID-19 patient"	"#1-2"	1	2	1_20200305.gpr
+"410"	"COVID-19 patient"	"#1-3"	1	3	1_20200305.gpr
+"510"	"COVID-19 patient"	"#1-4"	1	4	1_20200305.gpr
+"607"	"COVID-19 patient"	"#1-5"	1	5	1_20200305.gpr
+"406"	"COVID-19 patient"	"#1-6"	1	6	1_20200305.gpr
+"407"	"COVID-19 patient"	"#1-7"	1	7	1_20200305.gpr
+"NC95"	"Control"	"#1-8"	1	8	1_20200305.gpr
+"429"	"COVID-19 patient"	"#1-9"	1	9	1_20200305.gpr
+"NC96"	"Control"	"#1-10"	1	10	1_20200305.gpr
+"NC67"	"Control"	"#1-11"	1	11	1_20200305.gpr
+"NC97"	"Control"	"#1-12"	1	12	1_20200305.gpr
+"LC168"	"Control"	"#1-13"	1	13	1_20200305.gpr	
+"NC63"	"Control"	"#1-14"	1	14	1_20200305.gpr
+"534"	"COVID-19 patient"	"#2-1"	2	1	2_20200305.gpr
+"535"	"COVID-19 patient"	"#2-2"	2	2	2_20200305.gpr
+"605"	"COVID-19 patient"	"#2-3"	2	3	2_20200305.gpr
+"414"	"COVID-19 patient"	"#2-4"	2	4	2_20200305.gpr
+"532"	"COVID-19 patient"	"#2-5"	2	5	2_20200305.gpr
+"401"	"COVID-19 patient"	"#2-6"	2	6	2_20200305.gpr
+"530"	"COVID-19 patient"	"#2-7"	2	7	2_20200305.gpr
+"NC98"	"Control"	"#2-8"	2	8	2_20200305.gpr
+"509"	"COVID-19 patient"	"#2-9"	2	9	2_20200305.gpr
+"NC99"	"Control"	"#2-10"	2	10	2_20200305.gpr	
+"502"	"COVID-19 patient"	"#2-11"	2	11	2_20200305.gpr
+"NC100"	"Control"	"#2-12"	2	12	2_20200305.gpr
+"LC169"	"Control"	"#2-13"	2	13	2_20200305.gpr
+"NC64"	"Control"	"#2-14"	2	14	2_20200305.gpr
+"534"	"COVID-19 patient"	"#3-1"	3	1	3_20200305.gpr
+"535"	"COVID-19 patient"	"#3-2"	3	2	3_20200305.gpr
+"409"	"COVID-19 patient"	"#3-3"	3	3	3_20200305.gpr
+"526"	"COVID-19 patient"	"#3-4"	3	4	3_20200305.gpr
+"436"	"COVID-19 patient"	"#3-5"	3	5	3_20200305.gpr
+"527"	"COVID-19 patient"	"#3-6"	3	6	3_20200305.gpr
+"508"	"COVID-19 patient"	"#3-7"	3	7	3_20200305.gpr
+"LC175"	"Control"	"#3-8"	3	8	3_20200305.gpr
+"520"	"COVID-19 patient"	"#3-9"	3	9	3_20200305.gpr
+"LC177"	"Control"	"#3-10"	3	10	3_20200305.gpr	
+"522"	"COVID-19 patient"	"#3-11"	3	11	3_20200305.gpr
+"LC180"	"Control"	"#3-12"	3	12	3_20200305.gpr
+"LC171"	"Control"	"#3-13"	3	13	3_20200305.gpr
+"NC65"	"Control"	"#3-14"	3	14	3_20200305.gpr
+"Blank"	"blank"	"#4-1"	4	1	4_20200305.gpr
+"531"	"COVID-19 patient"	"#4-2"	4	2	4_20200305.gpr
+"610"	"COVID-19 patient"	"#4-3"	4	3	4_20200305.gpr
+"Blank"	"blank"	"#4-4"	4	4	4_20200305.gpr
+"744"	"COVID-19 patient"	"#4-5"	4	5	4_20200305.gpr
+"533"	"COVID-19 patient"	"#4-6"	4	6	4_20200305.gpr
+"405"	"COVID-19 patient"	"#4-7"	4	7	4_20200305.gpr
+"LC181"	"Control"	"#4-8"	4	8	4_20200305.gpr
+"523"	"COVID-19 patient"	"#4-9"	4	9	4_20200305.gpr
+"LC182"	"Control"	"#4-10"	4	10	4_20200305.gpr
+"529"	"COVID-19 patient"	"#4-11"	4	11	4_20200305.gpr
+"LC184"	"Control"	"#4-12"	4	12	4_20200305.gpr
+"LC174"	"Control"	"#4-13"	4	13	4_20200305.gpr
+"NC66"	"Control"	"#4-14"	4	14	4_20200305.gpr
