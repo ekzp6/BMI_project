@@ -4,6 +4,7 @@ library(Glimma)
 library(edgeR) #install with BiocManager
 library(genefilter)
 library(ggplot2)
+library(ggstatsplot)
 
 getwd()
 setwd("~/FS20/BMI_intro/project/BMI_project")
@@ -116,21 +117,23 @@ for (i in 1:94) {
     (avgCOVID_IgG$avg[i] <- log2(avgCOVID_IgG$avg[i]))  
   }
 }
+
+avgCOVID_IgG %>% arrange(avg,desc(Name))
+
 # making box plots
 rowNames <- c('COVID','Control')
 boxplot(avgCOVID_IgG$avg,avgControl_IgG$avg,horizontal = TRUE,
-        names=rowNames,main="Average binding using IgG",id.method="y")
+        names=rowNames,main="Average binding using IgG", id=list(n=Inf))
 
 boxplot(avgCOVID_IgM$avg,avgControl_IgM$avg,horizontal = TRUE,
         names=rowNames,main="Average binding using IgM")
 
-# ------------------------------------------------- Histograms 
-### make figures for contaminated proteins -- graph expression of IgG/IgM 
-  ### group by sample type (Covid, Control)
+avgCOVID_IgG %>% arrange(avg)
+avgControl_IgG %>% arrange(avg)
+avgControl_IgG %>% arrange(-avg)
 
-
-### make figures for proteins identified as important by paper
-  ### group by sample type
-
+avgCOVID_IgM %>% arrange(avg)
+avgControl_IgG %>% arrange(avg)
+avgControl_IgG %>% arrange(-avg)
 
 
