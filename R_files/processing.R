@@ -3,6 +3,7 @@ library(limma)
 library(Glimma)
 library(edgeR) #install with BiocManager
 library(genefilter)
+library(ggplot2)
 
 getwd()
 setwd("~/FS20/BMI_intro/project/BMI_project")
@@ -15,29 +16,21 @@ samples2 <- filter(annotation,annotation$File == 2)
 samples3 <- filter(annotation,annotation$File == 3)
 samples4 <- filter(annotation,annotation$File == 4)
 
- data1 <- read_delim('raw_data-txt/raw_data1.txt',delim = "\t")
- data2 <- read_delim('raw_data-txt/raw_data2.txt',delim = "\t")
- data3 <- read_delim('raw_data-txt/raw_data3.txt',delim = "\t")
- data4 <- read_delim('raw_data-txt/raw_data4.txt',delim = "\t")
+data1 <- read_delim('raw_data-txt/raw_data1.txt',delim = "\t")
+data2 <- read_delim('raw_data-txt/raw_data2.txt',delim = "\t")
+data3 <- read_delim('raw_data-txt/raw_data3.txt',delim = "\t")
+data4 <- read_delim('raw_data-txt/raw_data4.txt',delim = "\t")
 
- data1 <-  merge(data1,samples1,by="Block")
- data2 <-  merge(data2,samples2,by="Block")
- data3 <-  merge(data3,samples3,by="Block")
- data4 <-  merge(data4,samples4,by="Block")
+data1 <-  merge(data1,samples1,by="Block")
+data2 <-  merge(data2,samples2,by="Block")
+data3 <-  merge(data3,samples3,by="Block")
+data4 <-  merge(data4,samples4,by="Block")
 
- merged_data <- as_tibble(rbind(data1,data2,data3,data4))
- lapply(merged_data,class)
+merged_data <- as_tibble(rbind(data1,data2,data3,data4))
+lapply(merged_data,class)
 
- merged_IgG <- as_tibble(data[,c('Samples ID','F532 Median - B532','Name','spotID')])
- merged_IgM <- as_tibble(data[,c('Samples ID','F635 Median - B635','Name','spotID')])
-
- write_delim(merged_data,'merged_data/merged_data.txt',delim="\t")
- write_delim(merged_IgG,'merged_data/merged_IgG.txt',delim = "\t")
- write_delim(merged_IgM,'merged_data/merged_IgM.txt',delim = "\t")
-
-merged_data <- read_delim('merged_data/merged_data.txt',delim = "\t")
-merged_IgG <- read_delim('merged_data/merged_IgG.txt',delim = "\t")
-merged_IgM <- read_delim('merged_data/merged_IgM.txt',delim = "\t")
+merged_IgG <- as_tibble(merged_data[c('Samples ID','F532 Median - B532','Name')])
+merged_IgM <- as_tibble(merged_data[c('Samples ID','F635 Median - B635','Name')])
 
 # ---------------------------------------------------------for separating into different files 
 ### separating samples into files
@@ -73,12 +66,13 @@ for (i in 1:31)
   write_delim(smp_IgM,file)
 }  
 
-# ---------------------------------------------trying to make a limma object
+# ---------------------------------------------*trying* to make a limma object
 ### making it into a limma object
 allFile <- list.files()
 IgG_DGE <- readDGE(allFile,columns=c(2,3),labels=`Samples ID`)
 
 # -------------------------------------------------generation of figures 
+# ------------------------------------------------- Box plots
 ### Visualizing Quality Control of Normalized Data
 boxplot(`F532 Median - B532`~`Samples ID`,merged_data,
         main = "Normalized IgG binding")
@@ -86,11 +80,57 @@ boxplot(`F532 Median - B532`~`Samples ID`,merged_data,
 boxplot(`F635 Median - B635`~`Samples ID`,merged_data,
         main = "Normalized IgM binding")
 
+### Making averaged box plot
+# making average by Name fluorescent values 
+avgCOVID_IgG <- as_tibble(filter(merged_data,`Description`=="COVID-19 patient")) %>% 
+  group_by(`Name`) %>%
+  summarise(avg=median(`F532 Median - B532`))
+
+avgCOVID_IgM <- as_tibble(filter(merged_data,`Description`=="COVID-19 patient")) %>% 
+  group_by(`Name`) %>%
+  summarise(avg=median(`F635 Median - B635`))
+
+avgControl_IgG <- as_tibble(filter(merged_data,`Description`=="Control")) %>% 
+  group_by(`Name`) %>%
+  summarise(avg=median(`F532 Median - B532`))
+
+avgControl_IgM <- as_tibble(filter(merged_data,`Description`=="Control")) %>% 
+  group_by(`Name`) %>%
+  summarise(avg=median(`F635 Median - B635`))
+
+# changing fluoresence values to log2
+for (i in 1:94) {
+  if (avgControl_IgM$avg[i] > 0){
+    (avgControl_IgM$avg[i] <- log2(avgControl_IgM$avg[i]))  
+  }
+
+  if (avgControl_IgG$avg[i] > 0){
+    (avgControl_IgG$avg[i] <- log2(avgControl_IgG$avg[i]))  
+  }
+
+  if (avgCOVID_IgM$avg[i] > 0){
+    (avgCOVID_IgM$avg[i] <- log2(avgCOVID_IgM$avg[i]))  
+  }
+
+  if (avgCOVID_IgG$avg[i] > 0){
+    (avgCOVID_IgG$avg[i] <- log2(avgCOVID_IgG$avg[i]))  
+  }
+}
+# making box plots
+rowNames <- c('COVID','Control')
+boxplot(avgCOVID_IgG$avg,avgControl_IgG$avg,horizontal = TRUE,
+        names=rowNames,main="Average binding using IgG",id.method="y")
+
+boxplot(avgCOVID_IgM$avg,avgControl_IgM$avg,horizontal = TRUE,
+        names=rowNames,main="Average binding using IgM")
+
+# ------------------------------------------------- Histograms 
 ### make figures for contaminated proteins -- graph expression of IgG/IgM 
-  ### group by sample type (Covid, NC, LC, Blank)
+  ### group by sample type (Covid, Control)
+
 
 ### make figures for proteins identified as important by paper
   ### group by sample type
 
-### maybe also make a figure for a protein identified as not important 
+
 
