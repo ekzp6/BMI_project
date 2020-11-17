@@ -1,0 +1,10 @@
+table_IgG[,c(1,24)]
+N_Cter_0.1_K=table_IgG[,c(1,24)]
+Data=N_Cter_0.1_K$`N-Cter_0.25_K`
+Patient=Data[1:29]
+Blank=Data[30]
+LC=Data[31:41]
+NC=Data[42:51]
+Control=Data[31:51]
+chisq.test(LC,NC)
+chisq.test()
